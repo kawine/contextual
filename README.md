@@ -6,7 +6,7 @@ This is the code for "How Contextual are Contextualized Word Representations? Co
 
 Run the setup.sh shell script. You may also need to install the dependencies for pytorch_pretrained, which is an earlier version of the Huggingface Transformers library that has been modified to easily retrieve the contextualized representations at each layer. 
 
-If you want to evaluate the new type of static embeddings proposed in the paper -- created by taking the first principal component of contextualized embeddings -- then you need to install the dependencies for word_embeddings_benchmark, which is the fork of the [library of the same name](https://github.com/kudkudak/word-embeddings-benchmarks).
+If you want to evaluate the new type of static embeddings proposed in the paper -- created by taking the first principal component of contextualized embeddings -- then you need to install dependencies for word_embeddings_benchmark, which is a fork of the [library of the same name](https://github.com/kudkudak/word-embeddings-benchmarks).
 
 Note that preprocess.py generates a contextualized representation for every token in every sentence (x 3 models x #layers per model). These representations are stored in the HDF5 format and later accessed by analyze.py. These vectors take up a lot of space -- for the analysis done in the paper, roughly 40G of space was needed.
 
@@ -20,9 +20,9 @@ Note that preprocess.py generates a contextualized representation for every toke
 
 ### FAQs
 
-1. Do the statistics in the CSV/JSON files under the bert/, elmo/, and gpt2 subdirectories match those in the paper exactly?
+1.	Do the statistics in the CSV/JSON files under the bert/, elmo/, and gpt2 subdirectories match those in the paper exactly?
 
-No; for example, word2sent.json, which indexes words in the data, is meant to be an example and only contains one word. The statistics in the other files (e.g., self_similarity.csv) should be close to what is charted in the paper, though not an exact match. Note that the statistics in those files have not been adjusted for anisotropy, as we do in the paper; this is why, for example, the values in variance_explained.csv are so high.
+	No; for example, word2sent.json, which indexes words in the data, is meant to be an example and only contains one word. The statistics in the other files (e.g., self_similarity.csv) should be close to what is charted in the paper, though not an exact match. Note that the statistics in those files have not been adjusted for anisotropy, as we do in the paper; this is why, for example, the values in variance_explained.csv are so high.
 
 ### Reference
 
