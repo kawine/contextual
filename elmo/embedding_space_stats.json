@@ -1,0 +1,27 @@
+{
+ "mean cosine similarity between sentence and words": {
+  "layer_0": 0.318,
+  "layer_1": 0.582,
+  "layer_2": 0.621
+ },
+ "mean cosine similarity across words": {
+  "layer_0": 0.008,
+  "layer_1": 0.157,
+  "layer_2": 0.136
+ },
+ "word norm std": {
+  "layer_0": 4.435,
+  "layer_1": 2.398,
+  "layer_2": 3.817
+ },
+ "word norm mean": {
+  "layer_0": 13.643,
+  "layer_1": 15.035,
+  "layer_2": 29.897
+ },
+ "variance explained for random words": {
+  "layer_0": 0.087,
+  "layer_1": 0.003,
+  "layer_2": 0.004
+ }
+}
