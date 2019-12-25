@@ -9,7 +9,7 @@ from typing import Dict, Tuple, Sequence, List
 from scipy.spatial.distance import cosine
 from allennlp.common.tqdm import Tqdm
 from scipy.stats import spearmanr
-from sklearn.decomposition import TruncatedSVD, PCA
+from sklearn.decomposition import PCA
 
 
 def calculate_word_similarity_across_sentences(
@@ -102,7 +102,7 @@ def variance_explained_by_pc(
 			embeddings = [ f[str(sent_index)][layer, word_index].tolist() for sent_index, word_index 
 				in word2sent_indexer[word] if f[str(sent_index)][layer, word_index].shape != () ]
 
-			pca = TruncatedSVD(n_components=100)
+			pca = PCA(n_components=1)
 			pca.fit(embeddings)
 			
 			variance_explained[f'layer_{layer}'] = min(1.0, round(pca.explained_variance_ratio_[0], 3))
